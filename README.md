@@ -116,6 +116,10 @@ It supports up to **50 accounts** and stores up to **20 transaction records per 
 
 ## 📸 Screenshots
 
+### 🆕 Create Account
+![Create Account](./screenshots/create-account.png)
+
+
 ### 🔐 Login Page
 ![Smart Banking Login](./screenshots/login.png)
 
@@ -128,8 +132,6 @@ It supports up to **50 accounts** and stores up to **20 transaction records per 
 ### 📜 Transaction History
 ![Transaction History](./screenshots/transactions.png)
 
-### 🆕 Create Account
-![Create Account](./screenshots/create-account.png)
 
 ## 🔌 API Endpoints
 
