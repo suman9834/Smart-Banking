@@ -1,6 +1,12 @@
 const SESSION_KEY = 'smart_banking_current_account';
 const LEGACY_SESSION_KEY = 'northstar_current_account';
-const API_BASE = 'http://localhost:8080';
+const LIVE_API_BASE = 'https://smart-banking-us4t.onrender.com';
+const DEFAULT_API_BASE = 'http://localhost:8080';
+const API_BASE = window.__SMART_BANKING_API_URL__ || LIVE_API_BASE || (
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? DEFAULT_API_BASE
+    : LIVE_API_BASE
+);
 
 function getSessionAccount() {
   const currentAccount = sessionStorage.getItem(SESSION_KEY);

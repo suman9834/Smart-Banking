@@ -20,7 +20,7 @@
 #define MAX_USERS 50
 #define MAX_TRANSACTIONS 20
 #define DATA_FILE "bank_data.dat"
-#define SERVER_PORT 8080
+#define DEFAULT_SERVER_PORT 8080
 #define RESPONSE_BUFFER_SIZE 8192
 
 typedef struct {
@@ -768,6 +768,9 @@ static void handleClient(int clientSocket) {
     if (headerEnd != NULL) {
         *headerEnd = '\0';
         bodyStart = headerEnd + 4;
+        while (*bodyStart == '\r' || *bodyStart == '\n' || *bodyStart == ' ' || *bodyStart == '\t') {
+            bodyStart++;
+        }
     }
 
     if (strcmp(method, "POST") == 0) {
@@ -789,10 +792,16 @@ static void startServer(void) {
     }
 #endif
 
+    const char *portEnv = getenv("PORT");
+    int serverPort = portEnv && portEnv[0] != '\0' ? atoi(portEnv) : DEFAULT_SERVER_PORT;
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     struct sockaddr_in serverAddress;
     int opt = 1;
     int clientSocket;
+
+    if (serverPort <= 0) {
+        serverPort = DEFAULT_SERVER_PORT;
+    }
 
     if (serverSocket < 0) {
         printf("Socket creation failed.\n");
@@ -804,10 +813,10 @@ static void startServer(void) {
     memset(&serverAddress, 0, sizeof(serverAddress));
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_addr.s_addr = htonl(INADDR_ANY);
-    serverAddress.sin_port = htons(SERVER_PORT);
+    serverAddress.sin_port = htons(serverPort);
 
     if (bind(serverSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress)) < 0) {
-        printf("Socket bind failed on port %d.\n", SERVER_PORT);
+        printf("Socket bind failed on port %d.\n", serverPort);
         SOCKET_CLOSE(serverSocket);
         return;
     }
@@ -818,7 +827,7 @@ static void startServer(void) {
         return;
     }
 
-    printf("ATM backend server is running on http://localhost:%d\n", SERVER_PORT);
+    printf("ATM backend server is running on http://localhost:%d\n", serverPort);
     printf("Press Ctrl+C to stop the server.\n");
 
     while (1) {
