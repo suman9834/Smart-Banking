@@ -113,6 +113,24 @@ It supports up to **50 accounts** and stores up to **20 transaction records per 
 
 ---
 
+
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Smart Banking Login](./screenshots/login.png)
+
+### 📊 Dashboard
+![Smart Banking Dashboard](./screenshots/dashboard.png)
+
+### 💳 Banking Operations
+![Banking Operations](./screenshots/operations.png)
+
+### 📜 Transaction History
+![Transaction History](./screenshots/transactions.png)
+
+### 🆕 Create Account
+![Create Account](./screenshots/create-account.png)
+
 ## 🔌 API Endpoints
 
 The backend exposes HTTP endpoints for frontend communication.
