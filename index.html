@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Smart Banking | Dashboard</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-page">
+	<div class="app-layout">
+		<aside class="sidebar">
+			<div class="brand"><span class="brand-mark">S</span><span>Smart Banking</span></div>
+			<nav class="side-nav" aria-label="Main navigation">
+				<a class="nav-item active" href="#overview"><span>◈</span> Overview</a>
+				<a class="nav-item" href="#activity"><span>↗</span> Activity</a>
+				<a class="nav-item" href="#payments"><span>⇄</span> Payments</a>
+			</nav>
+			<div class="sidebar-bottom"><div class="support-card"><span class="support-icon">?</span><div><strong>Need a hand?</strong><small>Our team is here 24/7</small></div></div><button id="logoutButton" class="logout-button">Log out <span>↗</span></button></div>
+		</aside>
+
+		<main class="dashboard">
+			<header class="topbar"><div><p class="eyebrow">MONDAY, 24 SEPTEMBER 2026</p><h1>Good morning, <span id="userName">there</span>.</h1></div><div class="topbar-actions"><button class="icon-button" title="Notifications">♧<i></i></button><div id="avatar" class="avatar">?</div></div></header>
+			<section class="hero-grid" id="overview">
+				<article class="balance-card"><div class="card-top"><span>Available balance</span><button id="hideBalance" class="plain-button">◉ <span>Hide</span></button></div><strong id="balanceValue">₹0.00</strong><div class="balance-meta"><span class="up-arrow">↗</span><span>Healthy account status</span><span class="balance-account" id="accountLabel">A/C -</span></div></article>
+				<article class="quick-card"><div class="section-heading"><div><p class="eyebrow">QUICK ACTIONS</p><h3>What would you like to do?</h3></div></div><div class="quick-actions"><button data-action="deposit"><span class="action-icon green">+</span><small>Deposit</small></button><button data-action="withdraw"><span class="action-icon orange">−</span><small>Withdraw</small></button><button data-action="transfer"><span class="action-icon blue">⇄</span><small>Transfer</small></button></div></article>
+			</section>
+			<section class="content-grid">
+				<article class="panel activity-panel" id="activity"><div class="panel-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h2>Your money, in motion.</h2></div><button id="viewAll" class="text-button">View all <span>→</span></button></div><div id="transactionList" class="transaction-list"></div></article>
+				<article class="panel insight-panel"><div class="panel-heading"><div><p class="eyebrow">ACCOUNT INSIGHT</p><h2>Keep growing.</h2></div><span class="sparkle">✦</span></div><div class="insight-graphic"><div class="chart-line"></div><span class="chart-label label-one">₹5k</span><span class="chart-label label-two">₹10k</span><span class="chart-label label-three">₹15k</span></div><p class="insight-copy">Your account is in good shape. Consistent saving is the simplest way to build your next chapter.</p><div class="quick-actions compact"><button data-action="deposit"><span class="action-icon green">+</span><small>Deposit</small></button><button data-action="changePin"><span class="action-icon blue">✎</span><small>PIN</small></button><button data-action="statement"><span class="action-icon orange">≡</span><small>Statement</small></button></div></article>
+			</section>
+			<footer class="dashboard-footer">
+				<span><i class="status-dot"></i> All systems operational</span>
+				<div class="social-links footer-social-links" aria-label="Social links">
+					<a href="https://www.linkedin.com/in/suman-kumar-93b1b4314/" target="_blank" rel="noreferrer">LinkedIn</a>
+					<a href="https://github.com/suman9834" target="_blank" rel="noreferrer">GitHub</a>
+					<a href="mailto:sumankumargin01234@gmail.com">Email</a>
+				</div>
+				<span>© 2026 Smart Banking</span>
+			</footer>
+		</main>
+	</div>
+	<div id="toast" class="toast" role="status"></div>
+	<script src="app.js"></script>
+</body>
+</html>

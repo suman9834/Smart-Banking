@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Smart Banking | Login</title>
+	<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body class="login-page">
+	<main class="login-shell">
+		<section class="login-visual">
+			<div class="brand"><span class="brand-mark">S</span><span>Smart Banking</span></div>
+			<div class="visual-copy">
+				<p class="eyebrow">SMART BANKING, SIMPLIFIED</p>
+				<h1>Your money.<br><em>Your momentum.</em></h1>
+				<p>Move money with confidence, track every detail, and keep your financial life beautifully organised.</p>
+			</div>
+			<div class="visual-footer"><span>Private by design</span><span>•</span><span>Available 24/7</span></div>
+		</section>
+
+		<section class="login-panel">
+			<div class="mobile-brand brand"><span class="brand-mark">S</span><span>Smart Banking</span></div>
+			<div class="form-heading">
+				<p class="eyebrow">WELCOME BACK</p>
+				<h2>Sign in to your account</h2>
+				<p>Use your account number and 4-digit PIN to continue.</p>
+			</div>
+			<form id="loginForm" class="auth-form">
+				<label>Account number<input id="accountNumber" inputmode="numeric" placeholder="e.g. 1001" required></label>
+				<label>4-digit PIN<input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••" required></label>
+				<button class="primary-button" type="submit">Open dashboard <span>→</span></button>
+				<button id="createAccountButton" class="outline-button" type="button">Create account</button>
+				<p id="loginMessage" class="form-message" aria-live="polite"></p>
+				<p id="createdAccount" class="created-account" aria-live="polite"></p>
+			</form>
+			<form id="createAccountForm" class="auth-form create-account-form" hidden>
+				<p class="account-number-note">Your account number will be generated automatically after registration.</p>
+				<label>Full name<input id="newAccountName" placeholder="e.g. Suman Kumar" required></label>
+				<label>Choose 4-digit PIN<input id="newAccountPin" type="password" inputmode="numeric" maxlength="4" placeholder="••••" required></label>
+				<button class="primary-button" type="submit">Create account <span>→</span></button>
+				<button id="cancelCreateAccount" class="outline-button" type="button">Back to login</button>
+			</form>
+			<div id="accountCreatedCard" class="account-created-card" hidden>
+				<span>Your Account Number</span>
+				<strong id="generatedAccountNumber"></strong>
+				<small>Use this number and your PIN to log in.</small>
+			</div>
+			<div class="demo-note"><span class="status-dot"></span><span>Demo access: <strong>1001</strong> / <strong>1234</strong></span></div>
+			<p class="legal">By continuing, you agree to our Terms of Service and Privacy Policy.</p>
+			<div class="social-links" aria-label="Social links">
+				<a href="https://www.linkedin.com/in/suman-kumar-93b1b4314/" target="_blank" rel="noreferrer">LinkedIn</a>
+				<a href="https://github.com/suman9834" target="_blank" rel="noreferrer">GitHub</a>
+				<a href="mailto:sumankumargin01234@gmail.com">Email</a>
+			</div>
+		</section>
+	</main>
+	<script src="app.js?v=2"></script>
+</body>
+</html>
