@@ -6,6 +6,12 @@ The project demonstrates core banking operations such as account creation, secur
 
 > **Note:** This project is an educational/demo banking application and is **not intended for real financial transactions or production banking use**.
 
+## 🚀 Live Demo
+
+🌐 **Frontend:** https://smart-banking-seven.vercel.app/
+
+🔐 **Dashboard:** https://smart-banking-41kgo90ej-suman9834s-projects.vercel.app/hot.html
+
 ---
 
 ## ✨ Features
