@@ -223,7 +223,7 @@ These demo accounts are defined in the C backend.
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/suman9834/Smart-Banking.git
 cd smart-banking
 ```
 
